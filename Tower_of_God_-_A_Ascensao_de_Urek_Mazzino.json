@@ -6,7 +6,7 @@
   "cover": "https://cdn.myanimelist.net/images/manga/2/324137l.jpg",
   "status": "Em Andamento",
   "chapters": {
-    "Cap 003 - Tower of God - A Ascensão de Urek": {
+    "001": {
       "title": "Cap 003 - Tower of God - A Ascensão de Urek",
       "volume": "",
       "last_updated": "1747175327",
@@ -33,7 +33,7 @@
         ]
       }
     },
-    "Cap 001 - Tower of God - A Ascensão de Urek": {
+    "002": {
       "title": "Cap 001 - Tower of God - A Ascensão de Urek",
       "volume": "",
       "last_updated": "1747175339",
@@ -64,7 +64,7 @@
         ]
       }
     },
-    "Cap 002 - Tower of God - A Ascensão de Urek": {
+    "003": {
       "title": "Cap 002 - Tower of God - A Ascensão de Urek",
       "volume": "",
       "last_updated": "1747175350",
