@@ -6,9 +6,9 @@
   "cover": "https://cdn.myanimelist.net/images/manga/2/223694.jpg",
   "status": "Concluído",
   "chapters": {
-    "001": {
+    "000": {
       "title": "Cap 000 - Prévia",
-      "volume": "1",
+      "volume": "",
       "last_updated": "1747178258",
       "groups": {
         "TOG Brasil": [
@@ -22,7 +22,7 @@
         ]
       }
     },
-    "002": {
+    "001": {
       "title": "Cap 001 - 1A - Andar de Headon (1)",
       "volume": "",
       "last_updated": "1747198236",
@@ -74,7 +74,7 @@
         ]
       }
     },
-    "003": {
+    "002": {
       "title": "Cap 002 - 1A - Andar de Headon (2)",
       "volume": "",
       "last_updated": "1747178277",
@@ -173,7 +173,7 @@
         ]
       }
     },
-    "005": {
+    "004": {
       "title": "Cap 004 - 1A - Andar de Headon (4)",
       "volume": "",
       "last_updated": "1747178291",
@@ -224,7 +224,7 @@
         ]
       }
     },
-    "006": {
+    "005": {
       "title": "Cap 005 - 2A - Inferno de Evankhell (1)",
       "volume": "",
       "last_updated": "1747178301",
@@ -269,6 +269,48 @@
           "https://files.catbox.moe/vubtw5.jpg",
           "https://files.catbox.moe/uyw6rt.jpg",
           "https://files.catbox.moe/byz6hm.jpg"
+        ]
+      }
+    },
+    "006": {
+      "title": "Cap 006 - 2A - Inferno de Evankhell (2)",
+      "volume": "",
+      "last_updated": "1747201200",
+      "groups": {
+        "TOG Brasil": [
+          "https://files.catbox.moe/ynxk4h.jpg",
+          "https://files.catbox.moe/0rj8yt.jpg",
+          "https://files.catbox.moe/22mk40.jpg",
+          "https://files.catbox.moe/2ux85h.jpg",
+          "https://files.catbox.moe/f5x2lu.jpg",
+          "https://files.catbox.moe/izn93p.jpg",
+          "https://files.catbox.moe/ixmxd2.jpg",
+          "https://files.catbox.moe/p0w155.jpg",
+          "https://files.catbox.moe/0uopxn.jpg",
+          "https://files.catbox.moe/owqkb8.jpg",
+          "https://files.catbox.moe/cpwcnb.jpg",
+          "https://files.catbox.moe/8h0924.jpg",
+          "https://files.catbox.moe/ek0bvh.jpg",
+          "https://files.catbox.moe/63qr1e.jpg",
+          "https://files.catbox.moe/5seums.jpg",
+          "https://files.catbox.moe/6yvo36.jpg",
+          "https://files.catbox.moe/3vhhsf.jpg",
+          "https://files.catbox.moe/o82p4d.jpg",
+          "https://files.catbox.moe/3qhhc6.jpg",
+          "https://files.catbox.moe/8tiq3r.jpg",
+          "https://files.catbox.moe/aon4zp.jpg",
+          "https://files.catbox.moe/qtbqwj.jpg",
+          "https://files.catbox.moe/j5amv8.jpg",
+          "https://files.catbox.moe/bybykn.jpg",
+          "https://files.catbox.moe/9rwbp5.jpg",
+          "https://files.catbox.moe/e62lk6.jpg",
+          "https://files.catbox.moe/nx8kbk.jpg",
+          "https://files.catbox.moe/n6g65c.jpg",
+          "https://files.catbox.moe/uuzj5u.jpg",
+          "https://files.catbox.moe/voaaqo.jpg",
+          "https://files.catbox.moe/fahbhr.jpg",
+          "https://files.catbox.moe/pi1grm.jpg",
+          "https://files.catbox.moe/wwzu7r.jpg"
         ]
       }
     }
