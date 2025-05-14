@@ -6,7 +6,7 @@
   "cover": "https://cdn.myanimelist.net/images/manga/2/223694.jpg",
   "status": "Concluído",
   "chapters": {
-    "000": {
+    "001": {
       "title": "Cap 000 - Prévia",
       "volume": "",
       "last_updated": "1747178258",
@@ -23,6 +23,58 @@
       }
     },
     "002": {
+      "title": "Cap 001 - 1A - Andar de Headon (1)",
+      "volume": "",
+      "last_updated": "1747198236",
+      "groups": {
+        "TOG Brasil": [
+          "https://files.catbox.moe/rz8f8m.jpg",
+          "https://files.catbox.moe/7agstv.jpg",
+          "https://files.catbox.moe/n4fhrs.jpg",
+          "https://files.catbox.moe/pj644l.jpg",
+          "https://files.catbox.moe/7s6zaz.jpg",
+          "https://files.catbox.moe/ihfslv.jpg",
+          "https://files.catbox.moe/fneglf.jpg",
+          "https://files.catbox.moe/v2lzdd.jpg",
+          "https://files.catbox.moe/vso581.jpg",
+          "https://files.catbox.moe/flmcte.jpg",
+          "https://files.catbox.moe/2ly2a3.jpg",
+          "https://files.catbox.moe/0p5f74.jpg",
+          "https://files.catbox.moe/cavthg.jpg",
+          "https://files.catbox.moe/ldq4lj.jpg",
+          "https://files.catbox.moe/8yg3ru.jpg",
+          "https://files.catbox.moe/aas10c.jpg",
+          "https://files.catbox.moe/ek1w3z.jpg",
+          "https://files.catbox.moe/jnbgqx.jpg",
+          "https://files.catbox.moe/0s6bz4.jpg",
+          "https://files.catbox.moe/bnmyx9.jpg",
+          "https://files.catbox.moe/9s6b86.jpg",
+          "https://files.catbox.moe/tdh3gs.jpg",
+          "https://files.catbox.moe/rf7f2g.jpg",
+          "https://files.catbox.moe/06wlq0.jpg",
+          "https://files.catbox.moe/du3apa.jpg",
+          "https://files.catbox.moe/bfp5hi.jpg",
+          "https://files.catbox.moe/hnr0uk.jpg",
+          "https://files.catbox.moe/cm3r53.jpg",
+          "https://files.catbox.moe/9kdzpy.jpg",
+          "https://files.catbox.moe/aanod1.jpg",
+          "https://files.catbox.moe/0hrj8h.jpg",
+          "https://files.catbox.moe/dogugy.jpg",
+          "https://files.catbox.moe/96o8dm.jpg",
+          "https://files.catbox.moe/z3486s.jpg",
+          "https://files.catbox.moe/h9vrzy.jpg",
+          "https://files.catbox.moe/z9iijb.jpg",
+          "https://files.catbox.moe/v8x56z.jpg",
+          "https://files.catbox.moe/5jdo9f.jpg",
+          "https://files.catbox.moe/o3b0lq.jpg",
+          "https://files.catbox.moe/jw28y8.jpg",
+          "https://files.catbox.moe/58gqoj.jpg",
+          "https://files.catbox.moe/8egzj6.jpg",
+          "https://files.catbox.moe/2waqpy.jpg"
+        ]
+      }
+    },
+    "003": {
       "title": "Cap 002 - 1A - Andar de Headon (2)",
       "volume": "",
       "last_updated": "1747178277",
@@ -111,7 +163,7 @@
         ]
       }
     },
-    "003": {
+    "004": {
       "title": "Cap 003 - 1A - Andar de Headon (3)",
       "volume": "",
       "last_updated": "1747178280",
@@ -121,7 +173,7 @@
         ]
       }
     },
-    "004": {
+    "005": {
       "title": "Cap 004 - 1A - Andar de Headon (4)",
       "volume": "",
       "last_updated": "1747178291",
@@ -172,7 +224,7 @@
         ]
       }
     },
-    "005": {
+    "006": {
       "title": "Cap 005 - 2A - Inferno de Evankhell (1)",
       "volume": "",
       "last_updated": "1747178301",
