@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower Of God Brasil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #141414; /* 70% - Cinza bem escuro (quase preto) */
+            color: #e5e5e5; /* 10% - Cinza claro para texto */
+        }
+        .card {
+            background-color: #341111; /* 20% - Vermelho escuro/Marrom */
+            border: 1px solid #4a2525; /* Borda sutil avermelhada */
+            display: flex; /* Adicionado para flexibilidade interna do card */
+            flex-direction: column; /* Adicionado para empilhar conteúdo do card */
+            height: 100%; /* Faz o card preencher a altura do contêiner do grid/flex */
+        }
+        .card-content {
+            flex-grow: 1; /* Permite que o conteúdo do card cresça */
+            display: flex;
+            flex-direction: column;
+        }
+        .card-title {
+            color: #f5f5f5; /* Branco suave para títulos de card */
+        }
+        .btn {
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border-radius: 0.5rem; /* rounded-lg */
+            font-weight: 600; /* semibold */
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #A94444; /* Vermelho moderado para contraste */
+            color: #e5e5e5;
+        }
+        .btn-primary:hover {
+            background-color: #8B0000; /* Vermelho escuro (DarkRed) */
+        }
+        .btn-secondary {
+            background-color: #503030; /* Tom de marrom/vermelho mais escuro */
+            color: #e5e5e5;
+        }
+        .btn-secondary:hover {
+            background-color: #402020; /* Tom ainda mais escuro */
+        }
+        .section-title { /* Usado para o H1 e títulos de seção da comunidade */
+            color: #f0a0a0; /* Rosa/Vermelho claro para títulos de seção */
+            border-bottom: 2px solid #A94444;
+            padding-bottom: 0.5rem;
+        }
+        .info-list li {
+            padding: 0.25rem 0;
+            color: #dcdcdc; /* Cinza um pouco mais escuro para listas */
+        }
+        .cover-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alinha a imagem no topo */
+            margin-bottom: 1.5rem; /* mb-6 */
+            flex-shrink: 0; /* Impede que o container da imagem encolha */
+        }
+        .cover-image {
+            border: 3px solid #4a2525; /* Borda avermelhada sutil */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+            width: 100%;
+            max-width: 250px; /* Ajuste o max-width conforme necessário */
+            height: auto; /* Mantém a proporção */
+            object-fit: cover; /* Garante que a imagem cubra a área designada sem distorcer */
+            aspect-ratio: 2/3; /* Proporção comum para capas de livros/mangás */
+        }
+        .community-link {
+            background-color: #2a0a0a; /* Vermelho bem escuro para links da comunidade */
+            border: 1px solid #4a2525;
+            color: #e5e5e5;
+        }
+        .community-link:hover {
+            background-color: #3a1a1a;
+            border-color: #A94444;
+            color: #f5f5f5;
+        }
+        .text-subtitle {
+            color: #c0c0c0; /* Cinza para subtítulos/textos secundários */
+        }
+        .highlight-text { /* Usado para subtítulos dentro dos cards como "Informações Técnicas" */
+            color: #f0a0a0; 
+        }
+        .card-actions {
+            margin-top: auto; /* Empurra os botões para o final do card-content */
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold section-title inline-block">Tower Of God Brasil</h1>
+            <p class="text-lg text-subtitle mt-3">de fã para fã. Projeto sem fins lucrativos.</p>
+            <p class="text-lg text-subtitle mt-1">Seu portal para o universo de Tower of God em português!</p>
+            <a href="https://comic.naver.com/webtoon/list?titleId=183559" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block btn btn-secondary py-2 px-4 text-sm">
+                Ler Capítulos Originais (Coreano)
+            </a>
+        </header>
+
+        <main>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <section id="urek-mazzino" class="card rounded-lg p-6 shadow-xl">
+                    <div class="cover-image-container">
+                        <img src="assets/tog-urek-mazzino.jpg" alt="Capa de Tower of God - A Ascensão de Urek Mazzino" class="rounded-lg cover-image" onerror="this.onerror=null;this.src='https://placehold.co/250x375/141414/e5e5e5?text=Capa+Indisponível';">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="text-2xl font-semibold mb-3 card-title">Spin Off: A Ascensão de Urek Mazzino</h2>
+                        <p class="mb-4 leading-relaxed text-sm">
+                            Antes de se tornar uma lenda, antes da Torre tremer ao ouvir seu nome, Urek Mazino era apenas mais um Regular — um desafiante entre muitos, subindo andar por andar com um propósito maior que o poder: perseguir o enigmático ser conhecido como Phantaminum.
+                        </p>
+                        <p class="mb-6 leading-relaxed text-sm">
+                            Tower of God – A Ascensão de Urek Mazino é um prelúdio que expande o universo da série e revela os primeiros passos de um dos personagens mais lendários da obra de SIU.
+                        </p>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-2 highlight-text">📖 Informações Técnicas:</h3>
+                            <ul class="list-disc list-inside info-list text-sm">
+                                <li>Formato: Prelúdio (spin-off)</li>
+                                <li>Status: Em andamento</li>
+                                <li>Publicação original: Utoon</li>
+                                <li>Idioma original: Coreano</li>
+                                <li>Autor: SIU (Artista e Escritor, via Webtoon)</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 card-actions">
+                            <a href="https://buzzheavier.com/tevlawhne681" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-2 px-4 text-sm block w-full sm:w-auto">
+                                Download
+                            </a>
+                            <a href="https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfLV9BX0FzY2Vuc2FvX2RlX1VyZWtfTWF6emluby5qc29u/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary py-2 px-4 text-sm block w-full sm:w-auto">
+                                Ler Online (Cubari)
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="parte1-irregular" class="card rounded-lg p-6 shadow-xl">
+                    <div class="cover-image-container">
+                        <img src="assets/tog-pt1.jpg" alt="Capa de Tower of God Parte 1 – O Irregular" class="rounded-lg cover-image" onerror="this.onerror=null;this.src='https://placehold.co/250x375/141414/e5e5e5?text=Capa+Indisponível';">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="text-2xl font-semibold mb-3 card-title">Parte 1 – O Irregular</h2>
+                        <p class="mb-4 leading-relaxed text-sm">
+                            Baam passou toda a sua vida em um espaço escuro e isolado. Sua única luz era Rachel, que lhe mostrou o mundo fora. Quando ela desaparece para escalar a misteriosa Torre, Baam decide segui-la.
+                        </p>
+                         <p class="mb-6 leading-relaxed text-sm">
+                            Tower of God: Parte 1 – O Irregular apresenta o início de uma jornada épica. Com 80 capítulos (2010-2012), introduz os conceitos da Torre e seus habitantes.
+                        </p>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-2 highlight-text">📖 Informações Técnicas:</h3>
+                            <ul class="list-disc list-inside info-list text-sm">
+                                <li>Capítulos: 80 (incluindo prólogo e recapitulação)</li>
+                                <li>Publicação original: 2010 a 2012 (Naver Webtoon)</li>
+                                <li>Publicado em inglês: LINE Webtoon / Webtoon Unscrolled</li>
+                                <li>Idioma original: Coreano</li>
+                                <li>Autor: SIU (Artista e Escritor, via Webtoon)</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 card-actions">
+                            <a href="https://buzzheavier.com/4l8x1psklppq" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-2 px-4 text-sm block w-full sm:w-auto">
+                                Download
+                            </a>
+                            <a href="https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfUGFydGVfMV9PX0lycmVndWxhcg/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary py-2 px-4 text-sm block w-full sm:w-auto">
+                                Ler Online (Cubari)
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="parte2-retorno-principe" class="card rounded-lg p-6 shadow-xl">
+                     <div class="cover-image-container">
+                        <img src="assets/tog-pt2.jpg" alt="Capa de Tower of God Parte 2 – O Retorno do Príncipe" class="rounded-lg cover-image" onerror="this.onerror=null;this.src='https://placehold.co/250x375/141414/e5e5e5?text=Capa+Indisponível';">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="text-2xl font-semibold mb-3 card-title">Parte 2 – O Retorno do Príncipe</h2>
+                        <p class="mb-4 leading-relaxed text-sm">
+                            Seis anos se passaram. A Torre muda, e novos protagonistas surgem, como Ja Wangnan e Jyu Viole Grace, que esconde uma identidade familiar.
+                        </p>
+                        <p class="mb-6 leading-relaxed text-sm">
+                           Com 337 capítulos (do 81 ao 417), esta parte aprofunda a mitologia e expande os conflitos, marcando uma fase mais densa e cheia de reviravoltas.
+                        </p>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-2 highlight-text">📚 Divisões principais:</h3>
+                            <ul class="list-disc list-inside info-list text-sm">
+                                <li>Ato 1 – O Príncipe de Zahard</li>
+                                <li>Ato 2 – A Batalha da Oficina</li>
+                                <li>Ato 3 – O Trem do Inferno</li>
+                                <li>Ato 4 – A Última Estação</li>
+                            </ul>
+                        </div>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-2 highlight-text">📖 Informações Técnicas:</h3>
+                             <ul class="list-disc list-inside info-list text-sm">
+                                <li>Status: Concluído</li>
+                                <li>Capítulos: 81 a 417</li>
+                                <li>Publicação original: 2012 a 2020 (Naver Webtoon)</li>
+                                <li>Autor: SIU (Artista e Escritor, via Webtoon)</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 card-actions">
+                            <a href="https://buzzheavier.com/9spktfdk9urn" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-2 px-4 text-sm block w-full sm:w-auto">
+                                Download
+                            </a>
+                            <a href="https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfUGFydGVfMl8lRTIlODAlOTNfT19SZXRvcm5vX2RvX1ByJUMzJUFEbmNpcGUuanNvbg/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary py-2 px-4 text-sm block w-full sm:w-auto">
+                                Ler Online (Cubari)
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="parte3-batalha-familias" class="card rounded-lg p-6 shadow-xl">
+                    <div class="cover-image-container">
+                        <img src="assets/tog-pt3.jpg" alt="Capa de Tower of God Parte 3 – A Batalha das Grandes Famílias" class="rounded-lg cover-image" onerror="this.onerror=null;this.src='https://placehold.co/250x375/141414/e5e5e5?text=Capa+Indisponível';">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="text-2xl font-semibold mb-3 card-title">Parte 3 – A Batalha das Grandes Famílias</h2>
+                        <p class="mb-4 leading-relaxed text-sm">
+                            Dois anos após a Última Estação, Baam, mais forte, envolve-se em disputas de poder que abalam a Torre. A história explora tensões entre linhagens, alianças e traições.
+                        </p>
+                        <p class="mb-6 leading-relaxed text-sm">
+                            Publicada de 2019 a 2025 (235 capítulos), este arco amadurece a narrativa, focando nas intrigas das grandes famílias e na luta pelo controle da Torre.
+                        </p>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-2 highlight-text">📖 Informações Técnicas:</h3>
+                            <ul class="list-disc list-inside info-list text-sm">
+                                <li>Capítulos: 235 (do 418 ao 652)</li>
+                                <li>Publicação original: 10/03/2019 a 02/02/2025</li>
+                                <li>Situação: Concluído</li>
+                                <li>Autor: SIU (Artista e Escritor, via Webtoon)</li>
+                            </ul>
+                        </div>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-2 highlight-text">⚔️ Destaques:</h3>
+                            <ul class="list-disc list-inside info-list text-sm">
+                                <li>Transformação de Baam</li>
+                                <li>Estratégia e batalhas em larga escala</li>
+                                <li>Tensão entre Famílias Fundadoras</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 card-actions">
+                            <a href="https://buzzheavier.com/euj1dt0jdnzk" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-2 px-4 text-sm block w-full sm:w-auto">
+                                Download
+                            </a>
+                            <a href="https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfUGFydGVfM18lRTIlODAlOTNfQV9CYXRhbGhhX2VudHJlX29zX0wlQzMlQURkZXJlc19kYXNfRmFtJUMzJUFEbGlhcy5qc29u/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary py-2 px-4 text-sm block w-full sm:w-auto">
+                                Ler Online (Cubari)
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section id="comunidade" class="mt-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold section-title inline-block mb-8">🌐 Junte-se à comunidade TOG Brasil:</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a href="https://t.me/ToGBrasil" target="_blank" rel="noopener noreferrer" class="community-link p-4 rounded-lg font-semibold transition-colors duration-300 block">Telegram</a>
+                    <a href="https://chat.whatsapp.com/E2sfzwQBmtk4G7SXE40d02" target="_blank" rel="noopener noreferrer" class="community-link p-4 rounded-lg font-semibold transition-colors duration-300 block">WhatsApp</a>
+                    <a href="https://is.gd/5brlcL" target="_blank" rel="noopener noreferrer" class="community-link p-4 rounded-lg font-semibold transition-colors duration-300 block">Facebook</a>
+                    <a href="https://bsky.app/profile/togbrasil.bsky.social" target="_blank" rel="noopener noreferrer" class="community-link p-4 rounded-lg font-semibold transition-colors duration-300 block">Bluesky</a>
+                    <a href="https://twitter.com/BrasilTower?s=09" target="_blank" rel="noopener noreferrer" class="community-link p-4 rounded-lg font-semibold transition-colors duration-300 block">Twitter</a>
+                    <a href="https://discord.gg/G3bYkAhSDG" target="_blank" rel="noopener noreferrer" class="community-link p-4 rounded-lg font-semibold transition-colors duration-300 block">Discord</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 py-8 border-t border-gray-700">
+            <p class="text-subtitle text-sm">Tower Of God Brasil - de fã para fã.</p>
+            <p class="text-subtitle text-sm">Projeto sem fins lucrativos.</p>
+            <p class="text-subtitle text-sm mt-1">&copy; <span id="currentYear"></span> Todos os direitos reservados para o autor SIU e Webtoon.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Adiciona o ano atual ao rodapé
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
