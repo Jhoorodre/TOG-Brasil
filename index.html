@@ -73,12 +73,18 @@
             object-fit: cover; /* Garante que a imagem cubra a área designada sem distorcer */
             aspect-ratio: 2/3; /* Proporção comum para capas de livros/mangás */
         }
-        .community-link {
-            background-color: #2a0a0a; /* Vermelho bem escuro para links da comunidade */
+        .external-link, .community-link { /* Estilo unificado para links externos e da comunidade */
+            background-color: #2a0a0a; 
             border: 1px solid #4a2525;
             color: #e5e5e5;
+            padding: 0.75rem; /* p-3 */
+            border-radius: 0.5rem; /* rounded-lg */
+            font-weight: 600; /* semibold */
+            transition: all 0.3s ease;
+            display: block; /* Para ocupar a célula do grid */
+            text-align: center;
         }
-        .community-link:hover {
+        .external-link:hover, .community-link:hover {
             background-color: #3a1a1a;
             border-color: #A94444;
             color: #f5f5f5;
@@ -100,9 +106,7 @@
             <h1 class="text-4xl md:text-5xl font-bold section-title inline-block">Tower Of God Brasil</h1>
             <p class="text-lg text-subtitle mt-3">de fã para fã. Projeto sem fins lucrativos.</p>
             <p class="text-lg text-subtitle mt-1">Seu portal para o universo de Tower of God em português!</p>
-            <a href="https://comic.naver.com/webtoon/list?titleId=183559" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block btn btn-secondary py-2 px-4 text-sm">
-                Ler Capítulos Originais (Coreano)
-            </a>
+            <!-- Botão removido daqui -->
         </header>
 
         <main>
@@ -289,16 +293,32 @@
                 </section>
             </div>
 
+            <!-- Seção de Links Externos -->
+            <section id="links-externos" class="my-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold section-title inline-block mb-8">🌐 Mais Informações e Plataformas Oficiais:</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <a href="https://myanimelist.net/manga/122663" target="_blank" rel="noopener noreferrer" class="external-link">MyAnimeList</a>
+                    <a href="https://anilist.co/manga/85143/Sinui-Tap/" target="_blank" rel="noopener noreferrer" class="external-link">AniList</a>
+                    <a href="https://www.mangaupdates.com/series/5z98aus/tower-of-god" target="_blank" rel="noopener noreferrer" class="external-link">MangaUpdates</a>
+                    <a href="https://kitsu.app/manga/tower-of-god" target="_blank" rel="noopener noreferrer" class="external-link">Kitsu</a>
+                    <a href="https://www.anime-planet.com/manga/tower-of-god" target="_blank" rel="noopener noreferrer" class="external-link">Anime-Planet</a>
+                    <a href="https://towerofgod.fandom.com/wiki/Tower_of_God_Wiki" target="_blank" rel="noopener noreferrer" class="external-link">Tower of God Wiki (Fandom)</a>
+                    <a href="https://www.webtoonunscrolled.com" target="_blank" rel="noopener noreferrer" class="external-link">Webtoon Unscrolled (Livros)</a>
+                    <a href="https://www.webtoons.com/en/fantasy/tower-of-god/list?title_no=95" target="_blank" rel="noopener noreferrer" class="external-link">Webtoon (EN)</a>
+                    <a href="https://comic.naver.com/webtoon/list?titleId=183559" target="_blank" rel="noopener noreferrer" class="external-link">Naver Webtoon (KR)</a>
+                </div>
+            </section>
+
             <!-- Comunidade TOG Brasil -->
             <section id="comunidade" class="mt-16 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold section-title inline-block mb-8">🌐 Junte-se à comunidade TOG Brasil:</h2>
+                <h2 class="text-3xl md:text-4xl font-bold section-title inline-block mb-8">🤝 Junte-se à comunidade TOG Brasil:</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <a href="https://t.me/ToGBrasil" target="_blank" rel="noopener noreferrer" class="community-link p-4 rounded-lg font-semibold transition-colors duration-300 block">Telegram</a>
-                    <a href="https://chat.whatsapp.com/E2sfzwQBmtk4G7SXE40d02" target="_blank" rel="noopener noreferrer" class="community-link p-4 rounded-lg font-semibold transition-colors duration-300 block">WhatsApp</a>
-                    <a href="https://is.gd/5brlcL" target="_blank" rel="noopener noreferrer" class="community-link p-4 rounded-lg font-semibold transition-colors duration-300 block">Facebook</a>
-                    <a href="https://bsky.app/profile/togbrasil.bsky.social" target="_blank" rel="noopener noreferrer" class="community-link p-4 rounded-lg font-semibold transition-colors duration-300 block">Bluesky</a>
-                    <a href="https://twitter.com/BrasilTower?s=09" target="_blank" rel="noopener noreferrer" class="community-link p-4 rounded-lg font-semibold transition-colors duration-300 block">Twitter</a>
-                    <a href="https://discord.gg/G3bYkAhSDG" target="_blank" rel="noopener noreferrer" class="community-link p-4 rounded-lg font-semibold transition-colors duration-300 block">Discord</a>
+                    <a href="https://t.me/ToGBrasil" target="_blank" rel="noopener noreferrer" class="community-link">Telegram</a>
+                    <a href="https://chat.whatsapp.com/E2sfzwQBmtk4G7SXE40d02" target="_blank" rel="noopener noreferrer" class="community-link">WhatsApp</a>
+                    <a href="https://is.gd/5brlcL" target="_blank" rel="noopener noreferrer" class="community-link">Facebook</a>
+                    <a href="https://bsky.app/profile/togbrasil.bsky.social" target="_blank" rel="noopener noreferrer" class="community-link">Bluesky</a>
+                    <a href="https://twitter.com/BrasilTower?s=09" target="_blank" rel="noopener noreferrer" class="community-link">Twitter</a>
+                    <a href="https://discord.gg/G3bYkAhSDG" target="_blank" rel="noopener noreferrer" class="community-link">Discord</a>
                 </div>
             </section>
         </main>
