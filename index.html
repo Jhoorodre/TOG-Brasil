@@ -4,84 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tower Of God Brasil</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #141414; /* 70% - Cinza bem escuro (quase preto) */
-            color: #e5e5e5; /* 10% - Cinza claro para texto */
+            background-color: #141414;
+            color: #e5e5e5;
         }
         .card {
-            background-color: #341111; /* 20% - Vermelho escuro/Marrom */
-            border: 1px solid #4a2525; /* Borda sutil avermelhada */
-            display: flex; /* Adicionado para flexibilidade interna do card */
-            flex-direction: column; /* Adicionado para empilhar conteúdo do card */
-            height: 100%; /* Faz o card preencher a altura do contêiner do grid/flex */
+            background-color: #341111;
+            border: 1px solid #4a2525;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
         .card-content {
-            flex-grow: 1; /* Permite que o conteúdo do card cresça */
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
         .card-title {
-            color: #f5f5f5; /* Branco suave para títulos de card */
+            color: #f5f5f5;
         }
         .btn {
             transition: all 0.3s ease;
             box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            border-radius: 0.5rem; /* rounded-lg */
-            font-weight: 600; /* semibold */
+            border-radius: 0.5rem;
+            font-weight: 600;
             text-align: center;
         }
         .btn-primary {
-            background-color: #A94444; /* Vermelho moderado para contraste */
-            color: #e5e5e5;
+            background-color: #B91C1C;
+            color: #ffffff;
         }
         .btn-primary:hover {
-            background-color: #8B0000; /* Vermelho escuro (DarkRed) */
+            background-color: #991B1B;
         }
         .btn-secondary {
-            background-color: #503030; /* Tom de marrom/vermelho mais escuro */
+            background-color: #503030;
             color: #e5e5e5;
         }
         .btn-secondary:hover {
-            background-color: #402020; /* Tom ainda mais escuro */
+            background-color: #402020;
         }
-        .section-title { /* Usado para o H1 e títulos de seção da comunidade */
-            color: #f0a0a0; /* Rosa/Vermelho claro para títulos de seção */
+        .section-title {
+            color: #f0a0a0;
             border-bottom: 2px solid #A94444;
             padding-bottom: 0.5rem;
         }
         .info-list li {
             padding: 0.25rem 0;
-            color: #dcdcdc; /* Cinza um pouco mais escuro para listas */
+            color: #dcdcdc;
         }
         .cover-image-container {
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Alinha a imagem no topo */
-            margin-bottom: 1.5rem; /* mb-6 */
-            flex-shrink: 0; /* Impede que o container da imagem encolha */
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-shrink: 0;
         }
         .cover-image {
-            border: 3px solid #4a2525; /* Borda avermelhada sutil */
+            border: 3px solid #4a2525;
             box-shadow: 0 4px 8px rgba(0,0,0,0.4);
             width: 100%;
-            max-width: 250px; /* Ajuste o max-width conforme necessário */
-            height: auto; /* Mantém a proporção */
-            object-fit: cover; /* Garante que a imagem cubra a área designada sem distorcer */
-            aspect-ratio: 2/3; /* Proporção comum para capas de livros/mangás */
+            max-width: 250px;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 2/3;
         }
-        .external-link, .community-link { /* Estilo unificado para links externos e da comunidade */
+        .external-link, .community-link {
             background-color: #2a0a0a; 
             border: 1px solid #4a2525;
             color: #e5e5e5;
-            padding: 0.75rem; /* p-3 */
-            border-radius: 0.5rem; /* rounded-lg */
-            font-weight: 600; /* semibold */
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
             transition: all 0.3s ease;
-            display: block; /* Para ocupar a célula do grid */
+            display: block; /* Alterado de flex para block */
             text-align: center;
         }
         .external-link:hover, .community-link:hover {
@@ -90,14 +99,35 @@
             color: #f5f5f5;
         }
         .text-subtitle {
-            color: #c0c0c0; /* Cinza para subtítulos/textos secundários */
+            color: #c0c0c0;
         }
-        .highlight-text { /* Usado para subtítulos dentro dos cards como "Informações Técnicas" */
+        .highlight-text {
             color: #f0a0a0; 
         }
         .card-actions {
-            margin-top: auto; /* Empurra os botões para o final do card-content */
+            margin-top: auto;
         }
+        #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #A94444;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        #backToTopBtn:hover {
+            background-color: #8B0000;
+        }
+        /* .icon-svg class pode ser removida se não houver mais SVGs, ou mantida para uso futuro */
     </style>
 </head>
 <body class="antialiased">
@@ -106,7 +136,6 @@
             <h1 class="text-4xl md:text-5xl font-bold section-title inline-block">Tower Of God Brasil</h1>
             <p class="text-lg text-subtitle mt-3">de fã para fã. Projeto sem fins lucrativos.</p>
             <p class="text-lg text-subtitle mt-1">Seu portal para o universo de Tower of God em português!</p>
-            <!-- Botão "Ler Capítulos Originais (Coreano)" foi removido -->
         </header>
 
         <main>
@@ -308,7 +337,7 @@
                     <a href="https://www.webtoonunscrolled.com" target="_blank" rel="noopener noreferrer" class="external-link">Webtoon Unscrolled</a>
                     <a href="https://www.webtoons.com/en/fantasy/tower-of-god/list?title_no=95" target="_blank" rel="noopener noreferrer" class="external-link">Webtoon (EN)</a>
                     <a href="https://comic.naver.com/webtoon/list?titleId=183559" target="_blank" rel="noopener noreferrer" class="external-link">Naver Webtoon (KR)</a>
-                    <a href="https://www.crunchyroll.com/pt-br/series/G6J0G49DR/tower-of-god" target="_blank" rel="noopener noreferrer" class="external-link">Crunchyroll (Anime)</a>
+                    <a href="https://www.crunchyroll.com/pt-br/series/G6J0G49DR/tower-of-god" target="_blank" rel="noopener noreferrer" class="external-link">Crunchyroll</a>
                     <a href="https://www.hulu.com/series/tower-of-god-b2623f96-4b19-4b95-9dc4-443f4bfc2fa0" target="_blank" rel="noopener noreferrer" class="external-link">Hulu (Anime)</a>
                     <a href="https://www.bilibili.tv/en/media/35839" target="_blank" rel="noopener noreferrer" class="external-link">Bilibili (Anime)</a>
                 </div>
@@ -335,9 +364,33 @@
         </footer>
     </div>
 
+    <button id="backToTopBtn" title="Voltar ao topo">&#8679;</button>
+
     <script>
-        // Adiciona o ano atual ao rodapé
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        let backToTopButton = document.getElementById("backToTopBtn");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopButton.style.display = "block";
+            backToTopButton.offsetHeight; 
+            backToTopButton.style.opacity = "1";
+            backToTopButton.style.visibility = "visible";
+          } else {
+            backToTopButton.style.opacity = "0";
+            backToTopButton.style.visibility = "hidden";
+            setTimeout(() => {
+                if (!(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)) {
+                     backToTopButton.style.display = "none";
+                }
+            }, 300); 
+          }
+        }
+        backToTopButton.addEventListener("click", function() {
+          window.scrollTo({top: 0, behavior: 'smooth'});
+        });
     </script>
 </body>
 </html>
