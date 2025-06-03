@@ -4,14 +4,30 @@
     "artist": "SIU",
     "author": "SIU",
     "cover": "https://cdn.myanimelist.net/images/manga/2/223694.jpg",
-    "status": "Em Andamento",
+    "status": "Concluído",
     "chapters": {
-        "001": {
-            "title": "Cap 001 - 1A - Andar de Headon (1)",
-            "volume": "1",
-            "last_updated": "1748910527",
-            "groups": {
-                "TOG Brasil": [
+      "000": {
+        "title": "Cap 000 - Prévia",
+        "volume": "",
+        "last_updated": "1747178258",
+        "groups": {
+          "TOG Brasil": [
+            "https://files.catbox.moe/p9bp60.jpg",
+            "https://files.catbox.moe/fb48g5.jpg",
+            "https://files.catbox.moe/7m22ss.jpg",
+            "https://files.catbox.moe/cfikry.jpg",
+            "https://files.catbox.moe/m42q8e.jpg",
+            "https://files.catbox.moe/q8yem3.jpg",
+            "https://files.catbox.moe/ttmd25.jpg"
+          ]
+        }
+      },
+      "001": {
+        "title": "Cap 001 - 1A - Andar de Headon (1)",
+        "volume": "",
+        "last_updated": "1747198236",
+        "groups": {
+          "TOG Brasil": [
                     "https://i.ibb.co/0RLdMKJm/001-Tower-of-God-Parte-1-O-Irregular-Cap-001-1-A-Andar-de-Headon-1.webp",
                     "https://i.ibb.co/S4YMNkVh/002-Tower-of-God-Parte-1-O-Irregular-Cap-001-1-A-Andar-de-Headon-1.webp",
                     "https://i.ibb.co/HLGsHyzZ/003-Tower-of-God-Parte-1-O-Irregular-Cap-001-1-A-Andar-de-Headon-1.webp",
