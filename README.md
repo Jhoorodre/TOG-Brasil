@@ -1,6 +1,6 @@
 # TOG-Brasil
 
-[![Tower of God Banner](https://imgur.com/hNxsySZ)]
+[![Tower of God Banner](https://files.catbox.moe/y8t3n2.jpg)](https://mangatowerofgod.com)
 
 **TOG-Brasil** é um repositório feito de fã para fã, dedicado ao universo de Tower Of God (TOG). Aqui reunimos materiais, referências e conteúdos em português para toda a comunidade brasileira apaixonada pela obra.
 
