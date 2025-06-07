@@ -31,8 +31,7 @@ O repositório é organizado da seguinte forma:
 /
 ├── index.html           # Página inicial
 ├── assets/              # Imagens e outros recursos
-├── docs/                # Documentação e arquivos de apoio
-└── README.md            # Este arquivo
+└── README.md            # Documentação e arquivos de apoio
 ```
 
 ## 📢 Avisos
@@ -42,11 +41,15 @@ O repositório é organizado da seguinte forma:
 
 ## 💬 Comunidade
 
-Entre para a nossa comunidade! Você pode sugerir conteúdos, compartilhar fanarts ou teorias, e trocar ideias com outros fãs.
+🌐 TOG Brasil – Junte-se à comunidade:
 
-- [Discord TOG-Brasil](https://discord.gg/seulink)
-- [Reddit r/TowerOfGod](https://www.reddit.com/r/TowerofGod/)
-
+- Telegram: https://t.me/ToGBrasil
+- WhatsApp: https://chat.whatsapp.com/E2sfzwQBmtk4G7SXE40d02
+- Facebook: https://is.gd/5brlcL
+- Bluesky: https://bsky.app/profile/togbrasil.bsky.social
+- Twitter: https://twitter.com/BrasilTower?s=09
+- Discord: https://discord.gg/G3bYkAhSDG
+  
 ## ✍️ Autor
 
 Feito por [Jhoorodre](https://github.com/Jhoorodre) e colaboradores.
