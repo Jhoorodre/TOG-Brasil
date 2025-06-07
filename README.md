@@ -31,6 +31,7 @@ O repositório é organizado da seguinte forma:
 /
 ├── index.html           # Página inicial
 ├── assets/              # Imagens e outros recursos
+├── TOG JSON             # JSONs usadas para o link RAW
 └── README.md            # Documentação e arquivos de apoio
 ```
 
