@@ -6,160 +6,474 @@
     <title>Tower Of God Brasil</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-red: #B91C1C;
+            --dark-red: #7F1D1D;
+            --accent-red: #f0a0a0;
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --border-color: #4a2525;
+            --text-primary: #f5f5f5;
+            --text-secondary: #c0c0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #141414;
-            color: #e5e5e5;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            position: relative;
         }
-        .card {
-            background-color: #341111;
-            border: 1px solid #4a2525;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-        .card-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .card-title {
-            color: #f5f5f5;
-        }
-        .btn {
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-align: center;
-        }
-        .btn-primary {
-            background-color: #B91C1C;
-            color: #ffffff;
-        }
-        .btn-primary:hover {
-            background-color: #991B1B;
-        }
-        .btn-secondary {
-            background-color: #503030;
-            color: #e5e5e5;
-        }
-        .btn-secondary:hover {
-            background-color: #402020;
-        }
-        .section-title {
-            color: #f0a0a0;
-            border-bottom: 2px solid #A94444;
-            padding-bottom: 0.5rem;
-        }
-        .info-list li {
-            padding: 0.25rem 0;
-            color: #dcdcdc;
-        }
-        .cover-image-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-            flex-shrink: 0;
-        }
-        .cover-image {
-            border: 3px solid #4a2525;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 250px;
-            height: auto;
-            object-fit: cover;
-            aspect-ratio: 2/3;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
         }
+
+        .tower-layer {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(185, 28, 28, 0.1) 50%, transparent 100%);
+            animation: rotate 60s linear infinite;
+        }
+
+        .tower-layer:nth-child(2) {
+            animation-duration: 90s;
+            animation-direction: reverse;
+            opacity: 0.05;
+        }
+
+        .tower-layer:nth-child(3) {
+            animation-duration: 120s;
+            opacity: 0.03;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Parallax Scrolling Effect */
+        .parallax-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .parallax-element {
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Hero Section with Cinematic Effect */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(45deg, #0a0a0a 0%, #1a0505 50%, #0a0a0a 100%);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 8rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #B91C1C, #f0a0a0, #B91C1C);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(185, 28, 28, 0.5);
+            letter-spacing: -0.02em;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+            color: var(--accent-red);
+        }
+
+        .hero-description {
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1s forwards;
+            color: var(--text-secondary);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced Cards */
+        .manga-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(74, 37, 37, 0.3) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .manga-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(185, 28, 28, 0.1), transparent);
+            transition: left 0.6s ease-in-out;
+        }
+
+        .manga-card:hover::before {
+            left: 100%;
+        }
+
+        .manga-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(185, 28, 28, 0.2);
+            border-color: var(--accent-red);
+        }
+
+        .manga-card:hover .cover-image {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 15px 35px rgba(185, 28, 28, 0.4);
+        }
+
+        .cover-image {
+            border-radius: 15px;
+            transition: all 0.5s ease;
+            filter: brightness(0.9) contrast(1.1);
+        }
+
+        .cover-image:hover {
+            filter: brightness(1) contrast(1.2);
+        }
+
+        /* Animated Buttons */
+        .btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #B91C1C, #DC2626);
+            border: none;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #991B1B, #B91C1C);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(185, 28, 28, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, #374151, #4B5563);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(45deg, #4B5563, #6B7280);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(75, 85, 99, 0.4);
+        }
+
+        /* Scroll Reveal Animation */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced Links Section */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
         .external-link, .community-link {
-            background-color: #2a0a0a; 
-            border: 1px solid #4a2525;
-            color: #e5e5e5;
-            padding: 0.75rem;
-            border-radius: 0.5rem;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(74, 37, 37, 0.2) 100%);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 1rem;
+            border-radius: 12px;
             font-weight: 600;
             transition: all 0.3s ease;
-            display: block; /* Alterado de flex para block */
+            text-decoration: none;
+            display: block;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
         }
+
         .external-link:hover, .community-link:hover {
-            background-color: #3a1a1a;
-            border-color: #A94444;
-            color: #f5f5f5;
+            background: linear-gradient(135deg, rgba(185, 28, 28, 0.2) 0%, rgba(74, 37, 37, 0.4) 100%);
+            border-color: var(--accent-red);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(185, 28, 28, 0.2);
+            color: var(--accent-red);
         }
-        .text-subtitle {
-            color: #c0c0c0;
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
         }
-        .highlight-text {
-            color: #f0a0a0; 
+
+        .floating-element:nth-child(even) {
+            animation-delay: -3s;
+            animation-direction: reverse;
         }
-        .card-actions {
-            margin-top: auto;
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--primary-red), var(--accent-red));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, var(--accent-red), var(--primary-red));
+        }
+
+        /* Enhanced Back to Top Button */
         #backToTopBtn {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #A94444;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--primary-red), var(--accent-red));
             color: white;
             border: none;
-            border-radius: 0.5rem;
-            padding: 0.75rem 1rem;
-            font-size: 1.25rem;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
             cursor: pointer;
             display: none;
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(185, 28, 28, 0.3);
         }
+
         #backToTopBtn:hover {
-            background-color: #8B0000;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 35px rgba(185, 28, 28, 0.5);
         }
-        /* .icon-svg class pode ser removida se não houver mais SVGs, ou mantida para uso futuro */
+
+        /* Section Titles */
+        .section-title {
+            background: linear-gradient(45deg, var(--accent-red), var(--primary-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--primary-red), var(--accent-red));
+            border-radius: 2px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .manga-card {
+                padding: 1.5rem;
+            }
+            
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(185, 28, 28, 0.3);
+            border-top: 3px solid var(--primary-red);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Particle Effect */
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: particle-float 8s linear infinite;
+        }
+
+        @keyframes particle-float {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(0);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-10vh) translateX(100px);
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
-    <div class="container mx-auto p-4 md:p-8">
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold section-title inline-block">Tower Of God Brasil</h1>
-            <p class="text-lg text-subtitle mt-3">de fã para fã. Projeto sem fins lucrativos.</p>
-            <p class="text-lg text-subtitle mt-1">Seu portal para o universo de Tower of God em português!</p>
-        </header>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
 
+    <div class="animated-bg">
+        <div class="tower-layer"></div>
+        <div class="tower-layer"></div>
+        <div class="tower-layer"></div>
+    </div>
+
+    <section class="hero-section parallax-container">
+        <div class="text-center z-10 relative px-4">
+            <h1 class="hero-title mb-6">Tower Of God Brasil</h1>
+            <p class="hero-subtitle mb-4">de fã para fã. Projeto sem fins lucrativos.</p>
+            <p class="hero-description">Seu portal para o universo de Tower of God em português!</p>
+        </div>
+        
+        <div class="floating-element" style="top: 10%; left: 10%; font-size: 2rem;">⚔️</div>
+        <div class="floating-element" style="top: 20%; right: 15%; font-size: 1.5rem;">🏰</div>
+        <div class="floating-element" style="bottom: 30%; left: 20%; font-size: 1.8rem;">⭐</div>
+        <div class="floating-element" style="bottom: 15%; right: 10%; font-size: 2.2rem;">🔥</div>
+    </section>
+
+    <div class="container mx-auto p-4 md:p-8 relative">
         <main>
-            <!-- Container principal para as obras, usando grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <!-- Obra 1: Spin Off Urek Mazzino -->
-                <section id="urek-mazzino" class="card rounded-lg p-6 shadow-xl">
-                    <div class="cover-image-container">
-                        <img src="assets/tog-urek-mazzino.jpg" alt="Capa de Tower of God - A Ascensão de Urek Mazzino" class="rounded-lg cover-image" onerror="this.onerror=null;this.src='https://placehold.co/250x375/141414/e5e5e5?text=Capa+Indisponível';">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <section id="urek-mazzino" class="manga-card scroll-reveal">
+                    <div class="cover-image-container flex justify-center mb-6">
+                        <img src="assets/tog-urek-mazzino.jpg" alt="Capa de Tower of God - A Ascensão de Urek Mazzino" class="rounded-lg cover-image w-full max-w-xs object-cover aspect-[2/3]" onerror="this.onerror=null;this.src='https://placehold.co/250x375/141414/e5e5e5?text=Capa+Indisponível';">
                     </div>
                     <div class="card-content">
-                        <h2 class="text-2xl font-semibold mb-3 card-title">Tower of God: A Ascensão de Urek Mazzino</h2>
-                        <p class="mb-4 leading-relaxed text-sm">
+                        <h2 class="text-2xl font-bold mb-4 text-center">Tower of God: A Ascensão de Urek Mazzino</h2>
+                        <p class="mb-4 leading-relaxed text-sm opacity-90">
                             Antes de se tornar uma lenda, antes da Torre tremer ao ouvir seu nome, Urek Mazino era apenas mais um Regular — um desafiante entre muitos, subindo andar por andar com um propósito maior que o poder: perseguir o enigmático ser conhecido como Phantaminum.
                         </p>
-                        <p class="mb-4 leading-relaxed text-sm">
+                        <p class="mb-4 leading-relaxed text-sm opacity-90">
                             Esta é a história nunca contada dos primeiros dias de Urek. Uma jornada marcada por provações brutais, batalhas intensas e uma determinação inabalável. Entre combates, alianças improváveis e segredos profundos, Urek começa a deixar sua marca na Torre.
                         </p>
-                        <p class="mb-6 leading-relaxed text-sm">
-                            Tower of God – A Ascensão de Urek Mazino é um prelúdio que expande o universo da série e revela os primeiros passos de um dos personagens mais lendários da obra de SIU.
-                        </p>
                         <div class="mb-6">
-                            <h3 class="text-xl font-semibold mb-2 highlight-text">📖 Informações Técnicas:</h3>
-                            <ul class="list-disc list-inside info-list text-sm">
+                            <h3 class="text-lg font-semibold mb-3 text-red-300">📖 Informações Técnicas:</h3>
+                            <ul class="list-disc list-inside text-sm opacity-80 space-y-1">
                                 <li>Formato: Prelúdio (spin-off)</li>
                                 <li>Status: Em andamento</li>
                                 <li>Publicação original: Utoon</li>
@@ -167,77 +481,61 @@
                                 <li>Autor: SIU</li>
                             </ul>
                         </div>
-                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 card-actions">
-                            <a href="https://buzzheavier.com/tevlawhne681" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-2 px-4 text-sm block w-full sm:w-auto">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="https://buzzheavier.com/tevlawhne681" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-3 px-6 text-sm flex-1">
                                 Download
                             </a>
-                            <a href="https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfLV9BX0FzY2Vuc2FvX2RlX1VyZWtfTWF6emluby5qc29u/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary py-2 px-4 text-sm block w-full sm:w-auto">
-                                Ler Online (Cubari)
+                            <a href="https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfLV9BX0FzY2Vuc2FvX2RlX1VyZWtfTWF6emluby5qc29u/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary py-3 px-6 text-sm flex-1">
+                                Ler Online
                             </a>
                         </div>
                     </div>
                 </section>
 
-                <!-- Obra 2: Parte 1 – O Irregular -->
-                <section id="parte1-irregular" class="card rounded-lg p-6 shadow-xl">
-                    <div class="cover-image-container">
-                        <img src="assets/tog-pt1.jpg" alt="Capa de Tower of God Parte 1 – O Irregular" class="rounded-lg cover-image" onerror="this.onerror=null;this.src='https://placehold.co/250x375/141414/e5e5e5?text=Capa+Indisponível';">
+                <section id="parte1-irregular" class="manga-card scroll-reveal">
+                    <div class="cover-image-container flex justify-center mb-6">
+                        <img src="assets/tog-pt1.jpg" alt="Capa de Tower of God Parte 1 – O Irregular" class="rounded-lg cover-image w-full max-w-xs object-cover aspect-[2/3]" onerror="this.onerror=null;this.src='https://placehold.co/250x375/141414/e5e5e5?text=Capa+Indisponível';">
                     </div>
                     <div class="card-content">
-                        <h2 class="text-2xl font-semibold mb-3 card-title">Tower of God: Parte 1 – O Irregular</h2>
-                        <p class="mb-4 leading-relaxed text-sm">
+                        <h2 class="text-2xl font-bold mb-4 text-center">Tower of God: Parte 1 – O Irregular</h2>
+                        <p class="mb-4 leading-relaxed text-sm opacity-90">
                             Baam passou toda a sua vida em um espaço escuro e isolado, sem conhecer o mundo além. Sua única luz era Rachel, a única pessoa que lhe mostrou o que existia fora daquele lugar.
                         </p>
-                        <p class="mb-4 leading-relaxed text-sm">
+                        <p class="mb-4 leading-relaxed text-sm opacity-90">
                             Quando ela desaparece para escalar a misteriosa Torre — uma estrutura colossal que promete realizar qualquer desejo — Baam decide segui-la, mesmo sem saber o que o espera.
                         </p>
-                        <p class="mb-4 leading-relaxed text-sm">
-                            Dentro da Torre, ele enfrentará desafios brutais, regras que mudam a cada andar e seres poderosos com seus próprios objetivos. Enquanto tenta reencontrar Rachel, Baam é lançado em um universo onde alianças são frágeis, combates são impiedosos e cada escolha pode significar vida ou morte.
-                        </p>
-                         <p class="mb-6 leading-relaxed text-sm">
-                            Tower of God: Parte 1 – O Irregular apresenta o início de uma jornada épica repleta de ação, mistério e fantasia. Com 80 capítulos publicados originalmente entre 2010 e 2012 no Naver Webtoon, a série introduz os conceitos fundamentais da Torre, seus habitantes e a energia que rege seu funcionamento.
-                        </p>
                         <div class="mb-6">
-                            <h3 class="text-xl font-semibold mb-2 highlight-text">📖 Informações Técnicas:</h3>
-                            <ul class="list-disc list-inside info-list text-sm">
+                            <h3 class="text-lg font-semibold mb-3 text-red-300">📖 Informações Técnicas:</h3>
+                            <ul class="list-disc list-inside text-sm opacity-80 space-y-1">
                                 <li>Capítulos: 80 (incluindo prólogo e recapitulação)</li>
                                 <li>Publicação original: 2010 a 2012 (Naver Webtoon)</li>
-                                <li>Publicado em inglês: LINE Webtoon / Webtoon Unscrolled</li>
-                                <li>Publicado em espanhol: Panini Comics</li>
                                 <li>Idioma original: Coreano</li>
                                 <li>Autor: SIU</li>
                             </ul>
                         </div>
-                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 card-actions">
-                            <a href="https://buzzheavier.com/4l8x1psklppq" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-2 px-4 text-sm block w-full sm:w-auto">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="https://buzzheavier.com/4l8x1psklppq" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-3 px-6 text-sm flex-1">
                                 Download
                             </a>
-                            <a href="https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfUGFydGVfMV9PX0lycmVndWxhcg/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary py-2 px-4 text-sm block w-full sm:w-auto">
-                                Ler Online (Cubari)
+                            <a href="https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfUGFydGVfMV9PX0lycmVndWxhcg/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary py-3 px-6 text-sm flex-1">
+                                Ler Online
                             </a>
                         </div>
                     </div>
                 </section>
 
-                <!-- Obra 3: Parte 2 – O Retorno do Príncipe -->
-                <section id="parte2-retorno-principe" class="card rounded-lg p-6 shadow-xl">
-                     <div class="cover-image-container">
-                        <img src="assets/tog-pt2.jpg" alt="Capa de Tower of God Parte 2 – O Retorno do Príncipe" class="rounded-lg cover-image" onerror="this.onerror=null;this.src='https://placehold.co/250x375/141414/e5e5e5?text=Capa+Indisponível';">
+                <section id="parte2-retorno-principe" class="manga-card scroll-reveal">
+                    <div class="cover-image-container flex justify-center mb-6">
+                        <img src="assets/tog-pt2.jpg" alt="Capa de Tower of God Parte 2 – O Retorno do Príncipe" class="rounded-lg cover-image w-full max-w-xs object-cover aspect-[2/3]" onerror="this.onerror=null;this.src='https://placehold.co/250x375/141414/e5e5e5?text=Capa+Indisponível';">
                     </div>
                     <div class="card-content">
-                        <h2 class="text-2xl font-semibold mb-3 card-title">Tower of God: Parte 2 – O Retorno do Príncipe</h2>
-                        <p class="mb-4 leading-relaxed text-sm">
-                            Seis anos se passaram desde os eventos da Parte 1. A Torre está mudando, e novos protagonistas surgem para enfrentar os desafios que virão. Entre eles estão Ja Wangnan, um Regular persistente com um passado misterioso, e Jyu Viole Grace, um jovem de habilidades impressionantes que esconde uma identidade familiar.
-                        </p>
-                        <p class="mb-4 leading-relaxed text-sm">
-                           Tower of God: Parte 2 – O Retorno do Príncipe marca uma nova fase na história, mais densa, intensa e repleta de estratégias e reviravoltas. Mesmo com foco em novos personagens, rostos conhecidos retornam, ligando os fios narrativos da Parte 1 ao novo cenário político e militar da Torre.
-                        </p>
-                        <p class="mb-6 leading-relaxed text-sm">
-                           Composta por 337 capítulos (do 81 ao 417), essa parte aprofunda a mitologia da obra e expande seus conflitos internos e externos.
+                        <h2 class="text-2xl font-bold mb-4 text-center">Tower of God: Parte 2 – O Retorno do Príncipe</h2>
+                        <p class="mb-4 leading-relaxed text-sm opacity-90">
+                            Seis anos se passaram desde os eventos da Parte 1. A Torre está mudando, e novos protagonistas surgem para enfrentar os desafios que virão.
                         </p>
                         <div class="mb-6">
-                            <h3 class="text-xl font-semibold mb-2 highlight-text">📚 Divisões principais:</h3>
-                            <ul class="list-disc list-inside info-list text-sm">
+                            <h3 class="text-lg font-semibold mb-3 text-red-300">📚 Divisões principais:</h3>
+                            <ul class="list-disc list-inside text-sm opacity-80 space-y-1">
                                 <li>Ato 1 – O Príncipe de Zahard</li>
                                 <li>Ato 2 – A Batalha da Oficina</li>
                                 <li>Ato 3 – O Trem do Inferno</li>
@@ -245,108 +543,67 @@
                             </ul>
                         </div>
                         <div class="mb-6">
-                            <h3 class="text-xl font-semibold mb-2 highlight-text">📖 Informações Técnicas:</h3>
-                             <ul class="list-disc list-inside info-list text-sm">
-                                <li>Capítulos: 81 a 417 (com capítulo 80 como prévia)</li>
-                                <li>Publicação original: 2012 a 2020 (Naver Webtoon)</li>
-                                <li>Publicado em inglês: LINE Webtoon</li>
-                                <li>Parte anterior: Parte 1 – O Irregular</li>
-                                <li>Parte seguinte: Parte 3 – Conflito das Famílias</li>
-                                <li>Idioma original: Coreano</li>
-                                <li>Autor: SIU</li>
-                            </ul>
+                            <h3 class="text-lg font-semibold mb-3 text-red-300">📺 Curiosidade:</h3>
+                            <p class="text-sm opacity-80">A adaptação em anime cobre até aproximadamente o capítulo 110.</p>
                         </div>
-                        <div class="mb-6">
-                            <h3 class="text-xl font-semibold mb-2 highlight-text">📺 Curiosidade:</h3>
-                            <ul class="list-disc list-inside info-list text-sm">
-                               <li>A adaptação em anime cobre até aproximadamente o capítulo 110.</li>
-                            </ul>
-                        </div>
-                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 card-actions">
-                            <a href="https://buzzheavier.com/9spktfdk9urn" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-2 px-4 text-sm block w-full sm:w-auto">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="https://buzzheavier.com/9spktfdk9urn" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-3 px-6 text-sm flex-1">
                                 Download
                             </a>
-                            <a href="https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfUGFydGVfMl8lRTIlODAlOTNfT19SZXRvcm5vX2RvX1ByJUMzJUFEbmNpcGUuanNvbg/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary py-2 px-4 text-sm block w-full sm:w-auto">
-                                Ler Online (Cubari)
+                            <a href="https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfUGFydGVfMl8lRTIlODAlOTNfT19SZXRvcm5vX2RvX1ByJUMzJUFEbmNpcGUuanNvbg/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary py-3 px-6 text-sm flex-1">
+                                Ler Online
                             </a>
                         </div>
                     </div>
                 </section>
 
-                <!-- Obra 4: Parte 3 – A Batalha das Grandes Famílias -->
-                <section id="parte3-batalha-familias" class="card rounded-lg p-6 shadow-xl">
-                    <div class="cover-image-container">
-                        <img src="assets/tog-pt3.jpg" alt="Capa de Tower of God Parte 3 – A Batalha das Grandes Famílias" class="rounded-lg cover-image" onerror="this.onerror=null;this.src='https://placehold.co/250x375/141414/e5e5e5?text=Capa+Indisponível';">
+                <section id="parte3-batalha-familias" class="manga-card scroll-reveal">
+                    <div class="cover-image-container flex justify-center mb-6">
+                        <img src="assets/tog-pt3.jpg" alt="Capa de Tower of God Parte 3 – A Batalha das Grandes Famílias" class="rounded-lg cover-image w-full max-w-xs object-cover aspect-[2/3]" onerror="this.onerror=null;this.src='https://placehold.co/250x375/141414/e5e5e5?text=Capa+Indisponível';">
                     </div>
                     <div class="card-content">
-                        <h2 class="text-2xl font-semibold mb-3 card-title">Tower of God: Parte 3 – A Batalha das Grandes Famílias</h2>
-                        <p class="mb-4 leading-relaxed text-sm">
+                        <h2 class="text-2xl font-bold mb-4 text-center">Tower of God: Parte 3 – A Batalha das Grandes Famílias</h2>
+                        <p class="mb-4 leading-relaxed text-sm opacity-90">
                             Dois anos se passaram desde a Última Estação. Mais forte e determinado, Baam inicia uma nova fase de sua jornada, agora envolvido em disputas de poder que abalam os alicerces da Torre.
                         </p>
-                        <p class="mb-4 leading-relaxed text-sm">
-                           Nesta etapa, a história assume uma escala muito maior, explorando as tensões entre antigas linhagens e o surgimento de alianças e traições que moldarão o futuro. A jornada de Baam cruza com intrigas políticas, estratégias militares e conflitos em larga escala, enquanto velhos segredos começam a emergir.
-                        </p>
-                        <p class="mb-6 leading-relaxed text-sm">
-                            Tower of God: Parte 3 – A Batalha das Grandes Famílias foi publicada entre março de 2019 e fevereiro de 2025, somando 235 capítulos. Este arco marca um amadurecimento na narrativa, mergulhando nos bastidores das grandes famílias e na luta pelo controle dentro da Torre.
-                        </p>
                         <div class="mb-6">
-                            <h3 class="text-xl font-semibold mb-2 highlight-text">📖 Informações Técnicas:</h3>
-                            <ul class="list-disc list-inside info-list text-sm">
-                                <li>Capítulos: 235 (do 418 ao 652)</li>
-                                <li>Publicação original: 10/03/2019 a 02/02/2025 (Naver Webtoon)</li>
-                                <li>Publicado em inglês: LINE Webtoon</li>
-                                <li>Parte anterior: Parte 2 – O Retorno do Príncipe</li>
-                                <li>Situação: Concluído</li>
-                                <li>Idioma original: Coreano</li>
-                                <li>Autor: SIU</li>
-                            </ul>
-                        </div>
-                        <div class="mb-6">
-                            <h3 class="text-xl font-semibold mb-2 highlight-text">⚔️ Destaques:</h3>
-                            <ul class="list-disc list-inside info-list text-sm">
+                            <h3 class="text-lg font-semibold mb-3 text-red-300">⚔️ Destaques:</h3>
+                            <ul class="list-disc list-inside text-sm opacity-80 space-y-1">
                                 <li>A transformação de Baam diante das disputas de poder</li>
                                 <li>Estratégia, política e batalhas em larga escala</li>
                                 <li>A tensão crescente entre as Famílias Fundadoras</li>
                                 <li>Revelações sobre a origem e estrutura da Torre</li>
                             </ul>
                         </div>
-                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 card-actions">
-                            <a href="https://buzzheavier.com/euj1dt0jdnzk" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-2 px-4 text-sm block w-full sm:w-auto">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="https://buzzheavier.com/euj1dt0jdnzk" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-3 px-6 text-sm flex-1">
                                 Download
                             </a>
-                            <a href="https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfUGFydGVfM18lRTIlODAlOTNfQV9CYXRhbGhhX2VudHJlX29zX0wlQzMlQURkZXJlc19kYXNfRmFtJUMzJUFEbGlhcy5qc29u/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary py-2 px-4 text-sm block w-full sm:w-auto">
-                                Ler Online (Cubari)
+                            <a href="https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfUGFydGVfM18lRTIlODAlOTNfQV9CYXRhbGhhX2VudHJlX29zX0wlQzMlQURkZXJlc19kYXNfRmFtJUMzJUFEbGlhcy5qc29u/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary py-3 px-6 text-sm flex-1">
+                                Ler Online
                             </a>
                         </div>
                     </div>
                 </section>
             </div>
 
-            <!-- Seção de Links Externos -->
-            <section id="links-externos" class="my-16 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold section-title inline-block mb-8">🌐 Mais Informações e Plataformas Oficiais:</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <section id="links-externos" class="my-20 text-center scroll-reveal">
+                <h2 class="text-4xl font-bold section-title mb-12">🌐 Mais Informações e Plataformas Oficiais</h2>
+                <div class="links-grid max-w-4xl mx-auto">
                     <a href="https://myanimelist.net/manga/122663" target="_blank" rel="noopener noreferrer" class="external-link">MyAnimeList</a>
                     <a href="https://anilist.co/manga/85143/Sinui-Tap/" target="_blank" rel="noopener noreferrer" class="external-link">AniList</a>
                     <a href="https://www.mangaupdates.com/series/5z98aus/tower-of-god" target="_blank" rel="noopener noreferrer" class="external-link">MangaUpdates</a>
-                    <a href="https://kitsu.app/manga/tower-of-god" target="_blank" rel="noopener noreferrer" class="external-link">Kitsu</a>
-                    <a href="https://www.anime-planet.com/manga/tower-of-god" target="_blank" rel="noopener noreferrer" class="external-link">Anime-Planet</a>
                     <a href="https://towerofgod.fandom.com/wiki/Tower_of_God_Wiki" target="_blank" rel="noopener noreferrer" class="external-link">Wiki (Fandom)</a>
-                    <a href="https://namu.wiki/w/%EC%8B%A0%EC%9D%98%20%ED%83%91" target="_blank" rel="noopener noreferrer" class="external-link">Namu.wiki (KR)</a>
-                    <a href="https://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9D%98_%ED%83%91" target="_blank" rel="noopener noreferrer" class="external-link">Wikipedia (KR)</a>
-                    <a href="https://www.webtoonunscrolled.com" target="_blank" rel="noopener noreferrer" class="external-link">Webtoon Unscrolled</a>
                     <a href="https://www.webtoons.com/en/fantasy/tower-of-god/list?title_no=95" target="_blank" rel="noopener noreferrer" class="external-link">Webtoon (EN)</a>
                     <a href="https://comic.naver.com/webtoon/list?titleId=183559" target="_blank" rel="noopener noreferrer" class="external-link">Naver Webtoon (KR)</a>
                     <a href="https://www.crunchyroll.com/pt-br/series/G6J0G49DR/tower-of-god" target="_blank" rel="noopener noreferrer" class="external-link">Crunchyroll</a>
-                    <a href="https://www.hulu.com/series/tower-of-god-b2623f96-4b19-4b95-9dc4-443f4bfc2fa0" target="_blank" rel="noopener noreferrer" class="external-link">Hulu (Anime)</a>
-                    <a href="https://www.bilibili.tv/en/media/35839" target="_blank" rel="noopener noreferrer" class="external-link">Bilibili (Anime)</a>
+                     <a href="https://www.webtoonunscrolled.com" target="_blank" rel="noopener noreferrer" class="external-link">Webtoon Unscrolled</a>
                 </div>
             </section>
 
-            <!-- Comunidade TOG Brasil -->
-            <section id="comunidade" class="mt-16 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold section-title inline-block mb-8">🤝 Junte-se à comunidade TOG Brasil:</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <section id="comunidade" class="my-20 text-center scroll-reveal">
+                <h2 class="text-4xl font-bold section-title mb-12">🤝 Junte-se à Comunidade</h2>
+                 <div class="links-grid max-w-4xl mx-auto">
                     <a href="https://t.me/ToGBrasil" target="_blank" rel="noopener noreferrer" class="community-link">Telegram</a>
                     <a href="https://chat.whatsapp.com/E2sfzwQBmtk4G7SXE40d02" target="_blank" rel="noopener noreferrer" class="community-link">WhatsApp</a>
                     <a href="https://is.gd/5brlcL" target="_blank" rel="noopener noreferrer" class="community-link">Facebook</a>
@@ -357,39 +614,82 @@
             </section>
         </main>
 
-        <footer class="text-center mt-12 py-8 border-t border-gray-700">
-            <p class="text-subtitle text-sm">Tower Of God Brasil - de fã para fã.</p>
-            <p class="text-subtitle text-sm">Projeto sem fins lucrativos.</p>
-            <p class="text-subtitle text-sm mt-1">&copy; <span id="currentYear"></span> Todos os direitos reservados para o autor SIU e Webtoon.</p>
+        <footer class="text-center mt-12 py-8 border-t border-[var(--border-color)]">
+            <p class="text-[var(--text-secondary)] text-sm">Tower Of God Brasil - de fã para fã.</p>
+            <p class="text-[var(--text-secondary)] text-sm">Projeto sem fins lucrativos.</p>
+            <p class="text-[var(--text-secondary)] text-sm mt-2">&copy; <span id="currentYear"></span> Todos os direitos da obra pertencem ao autor SIU e à Naver Webtoon.</p>
         </footer>
     </div>
 
-    <button id="backToTopBtn" title="Voltar ao topo">&#8679;</button>
+    <button id="backToTopBtn" title="Voltar ao topo">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
 
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            // Loading Overlay
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            window.addEventListener('load', () => {
+                loadingOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    loadingOverlay.style.display = 'none';
+                }, 500);
+            });
 
-        let backToTopButton = document.getElementById("backToTopBtn");
-        window.onscroll = function() {scrollFunction()};
+            // Set Current Year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        function scrollFunction() {
-          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            backToTopButton.style.display = "block";
-            backToTopButton.offsetHeight; 
-            backToTopButton.style.opacity = "1";
-            backToTopButton.style.visibility = "visible";
-          } else {
-            backToTopButton.style.opacity = "0";
-            backToTopButton.style.visibility = "hidden";
-            setTimeout(() => {
-                if (!(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)) {
-                     backToTopButton.style.display = "none";
+            // Back to Top Button
+            const backToTopButton = document.getElementById("backToTopBtn");
+            const showButtonThreshold = 200;
+
+            const handleScroll = () => {
+                if (window.scrollY > showButtonThreshold) {
+                    if (backToTopButton.style.display !== "flex") {
+                        backToTopButton.style.display = "flex";
+                        backToTopButton.style.alignItems = "center";
+                        backToTopButton.style.justifyContent = "center";
+                        backToTopButton.offsetHeight; // Trigger reflow
+                        backToTopButton.style.opacity = "1";
+                        backToTopButton.style.visibility = "visible";
+                    }
+                } else {
+                    if (backToTopButton.style.opacity === "1") {
+                        backToTopButton.style.opacity = "0";
+                        backToTopButton.style.visibility = "hidden";
+                        setTimeout(() => {
+                             if (window.scrollY <= showButtonThreshold) {
+                                backToTopButton.style.display = "none";
+                             }
+                        }, 300); // Match transition duration
+                    }
                 }
-            }, 300); 
-          }
-        }
-        backToTopButton.addEventListener("click", function() {
-          window.scrollTo({top: 0, behavior: 'smooth'});
+            };
+
+            window.addEventListener("scroll", handleScroll);
+
+            backToTopButton.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Scroll Reveal
+            const scrollElements = document.querySelectorAll('.scroll-reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            scrollElements.forEach(el => {
+                observer.observe(el);
+            });
         });
     </script>
 </body>
