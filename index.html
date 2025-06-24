@@ -270,7 +270,7 @@
             z-index: 9999;
             transition: opacity 0.5s ease;
         }
-        .loading-spinner {
+        .loading-spinner, .modal-spinner {
             width: 60px;
             height: 60px;
             border: 3px solid rgba(185, 28, 28, 0.3);
@@ -279,6 +279,63 @@
             animation: spin 1s linear infinite;
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Gemini API Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .modal-body h3 {
+            color: var(--accent-red);
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        .modal-body p {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
 
     </style>
 </head>
@@ -309,10 +366,10 @@
         <main>
             <!-- Manga Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                <!-- Card 1: Spin Off -->
+                 <!-- Card 1: Spin Off -->
                 <section id="urek-mazzino" class="manga-card scroll-reveal">
                     <div class="flex justify-center mb-6">
-                        <img src="https://placehold.co/300x450/1a1a1a/f0a0a0?text=TOG+Urek" alt="Capa de Tower of God - A Ascensão de Urek Mazzino" class="rounded-lg cover-image w-full max-w-xs object-cover aspect-[2/3]" onerror="this.onerror=null;this.src='https://placehold.co/300x450/1a1a1a/e5e5e5?text=Capa+Indisponível';">
+                        <img src="assets/tog-urek-mazzino.jpg" alt="Capa de Tower of God - A Ascensão de Urek Mazzino" class="rounded-lg cover-image w-full max-w-xs object-cover aspect-[2/3]" onerror="this.onerror=null;this.src='https://placehold.co/300x450/1a1a1a/e5e5e5?text=Capa+Indisponível';">
                     </div>
                     <div>
                         <h2 class="text-2xl font-bold mb-4 text-center">A Ascensão de Urek Mazzino</h2>
@@ -327,7 +384,7 @@
                 <!-- Card 2: Parte 1 -->
                 <section id="parte1" class="manga-card scroll-reveal">
                     <div class="flex justify-center mb-6">
-                        <img src="https://placehold.co/300x450/1a1a1a/f0a0a0?text=TOG+Parte+1" alt="Capa de Tower of God Parte 1 – O Irregular" class="rounded-lg cover-image w-full max-w-xs object-cover aspect-[2/3]" onerror="this.onerror=null;this.src='https://placehold.co/300x450/1a1a1a/e5e5e5?text=Capa+Indisponível';">
+                        <img src="assets/tog-pt1.jpg" alt="Capa de Tower of God Parte 1 – O Irregular" class="rounded-lg cover-image w-full max-w-xs object-cover aspect-[2/3]" onerror="this.onerror=null;this.src='https://placehold.co/300x450/1a1a1a/e5e5e5?text=Capa+Indisponível';">
                     </div>
                     <div>
                         <h2 class="text-2xl font-bold mb-4 text-center">Parte 1: O Irregular</h2>
@@ -342,7 +399,7 @@
                 <!-- Card 3: Parte 2 -->
                 <section id="parte2" class="manga-card scroll-reveal">
                     <div class="flex justify-center mb-6">
-                        <img src="https://placehold.co/300x450/1a1a1a/f0a0a0?text=TOG+Parte+2" alt="Capa de Tower of God Parte 2" class="rounded-lg cover-image w-full max-w-xs object-cover aspect-[2/3]" onerror="this.onerror=null;this.src='https://placehold.co/300x450/1a1a1a/e5e5e5?text=Capa+Indisponível';">
+                        <img src="assets/tog-pt2.jpg" alt="Capa de Tower of God Parte 2" class="rounded-lg cover-image w-full max-w-xs object-cover aspect-[2/3]" onerror="this.onerror=null;this.src='https://placehold.co/300x450/1a1a1a/e5e5e5?text=Capa+Indisponível';">
                     </div>
                     <div>
                         <h2 class="text-2xl font-bold mb-4 text-center">Parte 2: O Retorno do Príncipe</h2>
@@ -357,7 +414,7 @@
                 <!-- Card 4: Parte 3 -->
                 <section id="parte3" class="manga-card scroll-reveal">
                     <div class="flex justify-center mb-6">
-                        <img src="https://placehold.co/300x450/1a1a1a/f0a0a0?text=TOG+Parte+3" alt="Capa de Tower of God Parte 3" class="rounded-lg cover-image w-full max-w-xs object-cover aspect-[2/3]" onerror="this.onerror=null;this.src='https://placehold.co/300x450/1a1a1a/e5e5e5?text=Capa+Indisponível';">
+                        <img src="assets/tog-pt3.jpg" alt="Capa de Tower of God Parte 3" class="rounded-lg cover-image w-full max-w-xs object-cover aspect-[2/3]" onerror="this.onerror=null;this.src='https://placehold.co/300x450/1a1a1a/e5e5e5?text=Capa+Indisponível';">
                     </div>
                     <div>
                         <h2 class="text-2xl font-bold mb-4 text-center">Parte 3: Batalha das Famílias</h2>
@@ -369,6 +426,16 @@
                     </div>
                 </section>
             </div>
+
+            <!-- Gemini API Feature: Character Profile Generator -->
+            <section id="gemini-character" class="my-20 text-center scroll-reveal">
+                <h2 class="text-4xl font-bold section-title mb-4">🔮 Explorador da Torre</h2>
+                <p class="text-lg text-subtitle mb-8 max-w-2xl mx-auto">Digite o nome de um personagem de Tower of God e deixe a IA gerar um perfil para você.</p>
+                <div class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4">
+                    <input type="text" id="characterNameInput" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 text-white" placeholder="Ex: Khun Aguero Agnis">
+                    <button id="generateProfileBtn" class="btn btn-primary py-3 px-6 whitespace-nowrap">✨ Gerar Perfil</button>
+                </div>
+            </section>
 
             <!-- Links Externos -->
             <section id="links" class="my-20 text-center scroll-reveal">
@@ -407,17 +474,22 @@
                 <div class="manga-card max-w-4xl mx-auto">
                     <h2 class="text-3xl font-bold section-title mb-8 text-center">ℹ️ Sobre o Projeto</h2>
                     <div class="space-y-6 text-base leading-relaxed opacity-90 text-center">
-                        <p>
-                            O <strong>Tower of God Brasil</strong> é um projeto de fãs para fãs, nascido da paixão pela obra-prima de SIU. Nosso objetivo é centralizar e facilitar o acesso a traduções de qualidade do manhwa em português brasileiro.
-                        </p>
-                        <p>
-                           Acreditamos que grandes histórias merecem ser compartilhadas. Este espaço é nossa forma de contribuir com a comunidade, garantindo que mais pessoas possam embarcar nesta jornada épica.
-                        </p>
+                        <p>O <strong>Tower of God Brasil</strong> é um projeto de fãs para fãs, nascido da paixão pela obra-prima de SIU. Nosso objetivo é centralizar e facilitar o acesso a traduções de qualidade do manhwa em português brasileiro.</p>
+                        <p>Acreditamos que grandes histórias merecem ser compartilhadas. Este espaço é nossa forma de contribuir com a comunidade, garantindo que mais pessoas possam embarcar nesta jornada épica.</p>
+                        
+                        <!-- Gemini API Feature: What If Scenario Generator -->
+                        <div class="bg-red-900/10 border border-red-700/20 rounded-lg p-6 mt-8">
+                            <h3 class="font-semibold text-red-300 mb-3 text-lg">Criador de Cenários "E se..."</h3>
+                             <p class="text-sm mb-4">Já imaginou o que aconteceria se a história fosse diferente? Escreva sua ideia e deixe a IA criar um cenário alternativo!</p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <input type="text" id="whatIfInput" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 text-white" placeholder="E se Baam recusasse a ajuda de Headon?">
+                                <button id="generateWhatIfBtn" class="btn btn-secondary py-3 px-6 whitespace-nowrap">✨ Imaginar</button>
+                            </div>
+                        </div>
+
                         <div class="bg-red-900/20 border border-red-700/30 rounded-lg p-6 mt-8">
                             <h3 class="font-semibold text-red-300 mb-3 text-lg">Aviso Importante</h3>
-                            <p class="text-sm">
-                                Todos os direitos de Tower of God pertencem ao autor SIU e seus editores oficiais. Este é um trabalho não-oficial. <strong>Apoie o lançamento original!</strong> Se a obra for publicada no Brasil, compre e prestigie o autor.
-                            </p>
+                            <p class="text-sm">Todos os direitos de Tower of God pertencem ao autor SIU e seus editores oficiais. Este é um trabalho não-oficial. <strong>Apoie o lançamento original!</strong> Se a obra for publicada no Brasil, compre e prestigie o autor.</p>
                         </div>
                     </div>
                 </div>
@@ -436,6 +508,16 @@
         </footer>
     </div>
 
+    <!-- Modal for Gemini API Response -->
+    <div id="geminiModal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modalCloseBtn" class="modal-close-btn">&times;</button>
+            <div id="modalBody" class="modal-body text-white">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </div>
+
     <!-- Back to Top Button -->
     <button id="backToTopBtn" class="flex items-center justify-center" title="Voltar ao topo">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" /></svg>
@@ -443,41 +525,119 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Loading Screen
+            // --- Basic Page Setup ---
             const loadingOverlay = document.getElementById('loadingOverlay');
             window.addEventListener('load', () => {
                 setTimeout(() => {
                     loadingOverlay.style.opacity = '0';
-                    setTimeout(() => {
-                        loadingOverlay.style.display = 'none';
-                    }, 500);
-                }, 500); // Minimum load time
+                    setTimeout(() => { loadingOverlay.style.display = 'none'; }, 500);
+                }, 500);
             });
-
-            // Set Current Year
             document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-            // Scroll Reveal Animation
+            // --- Gemini API Integration ---
+            const geminiModal = document.getElementById('geminiModal');
+            const modalBody = document.getElementById('modalBody');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
+            const generateProfileBtn = document.getElementById('generateProfileBtn');
+            const characterNameInput = document.getElementById('characterNameInput');
+            const generateWhatIfBtn = document.getElementById('generateWhatIfBtn');
+            const whatIfInput = document.getElementById('whatIfInput');
+
+            const apiKey = ""; // API Key is handled by the environment
+
+            // Function to show the modal
+            const showModal = (title) => {
+                modalBody.innerHTML = `<h2 class="text-2xl font-bold mb-4 text-center text-red-400">${title}</h2><div class="flex justify-center p-8"><div class="modal-spinner"></div></div><p class="text-center text-gray-400">Gerando resposta com a IA... Por favor, aguarde.</p>`;
+                geminiModal.classList.add('active');
+            };
+            
+            // Function to hide the modal
+            const hideModal = () => {
+                geminiModal.classList.remove('active');
+            };
+
+            // Generic function to call Gemini API
+            async function callGemini(prompt, title) {
+                showModal(title);
+
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                         throw new Error(`API Error: ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    let text = "Não foi possível gerar uma resposta. Tente novamente.";
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        // Simple Markdown to HTML conversion
+                        text = result.candidates[0].content.parts[0].text
+                            .replace(/\*\*(.*?)\*\*/g, '<h3>$1</h3>') // Bold to h3
+                            .replace(/\*/g, '<br/>&bull; ') // Asterisk to list item
+                            .replace(/\n/g, '<br/>'); 
+                    }
+                    modalBody.innerHTML = `<h2 class="text-2xl font-bold mb-4 text-center text-red-400">${title}</h2><div class="text-left">${text}</div>`;
+                } catch (error) {
+                    console.error("Gemini API call failed:", error);
+                    modalBody.innerHTML = `<h2 class="text-2xl font-bold mb-4 text-center text-red-400">Erro</h2><p class="text-center">Houve um problema ao contatar a IA. Por favor, verifique o console para mais detalhes e tente novamente mais tarde.</p>`;
+                }
+            }
+
+            // Event listener for Character Profile
+            generateProfileBtn.addEventListener('click', () => {
+                const characterName = characterNameInput.value.trim();
+                if (!characterName) {
+                    alert("Por favor, digite o nome de um personagem.");
+                    return;
+                }
+                const prompt = `Crie um perfil detalhado sobre o personagem "${characterName}" do manhwa "Tower of God". O perfil deve estar em português do Brasil e incluir seções claras para: **História**, **Personalidade**, e **Habilidades e Poderes**. Seja descritivo e use informações conhecidas da obra. Formate a resposta de maneira clara, usando negrito para os títulos das seções.`;
+                callGemini(prompt, `Perfil de ${characterName}`);
+            });
+            
+            // Event listener for What If Scenario
+            generateWhatIfBtn.addEventListener('click', () => {
+                const whatIfScenario = whatIfInput.value.trim();
+                if (!whatIfScenario) {
+                    alert("Por favor, descreva um cenário 'E se...'.");
+                    return;
+                }
+                 const prompt = `Aja como um roteirista fã de "Tower of God". Crie um pequeno conto criativo baseado no seguinte cenário hipotético: "${whatIfScenario}". Mantenha os personagens fiéis às suas personalidades originais e explore as possíveis consequências desse evento na história. A resposta deve ser em português do Brasil.`;
+                 callGemini(prompt, `Cenário: "E se..."`);
+            });
+
+            modalCloseBtn.addEventListener('click', hideModal);
+            geminiModal.addEventListener('click', (e) => {
+                if (e.target === geminiModal) {
+                    hideModal();
+                }
+            });
+
+            // --- Scroll Animations and Back-to-Top Button ---
             const revealOnScroll = () => {
                 const reveals = document.querySelectorAll('.scroll-reveal');
                 for (let i = 0; i < reveals.length; i++) {
-                    const windowHeight = window.innerHeight;
-                    const elementTop = reveals[i].getBoundingClientRect().top;
-                    const elementVisible = 100;
-                    if (elementTop < windowHeight - elementVisible) {
+                    if (reveals[i].getBoundingClientRect().top < window.innerHeight - 100) {
                         reveals[i].classList.add('revealed');
                     }
                 }
             };
-
-            // Back to Top Button
             const backToTopButton = document.getElementById("backToTopBtn");
-            const showButtonThreshold = 300;
             const toggleBackToTopBtn = () => {
-                if (window.scrollY > showButtonThreshold) {
+                if (window.scrollY > 300) {
                     if (backToTopButton.style.display !== "flex") {
                         backToTopButton.style.display = "flex";
-                        backToTopButton.offsetHeight; // Trigger reflow
+                        backToTopButton.offsetHeight;
                         backToTopButton.style.opacity = "1";
                         backToTopButton.style.visibility = "visible";
                     }
@@ -488,11 +648,9 @@
                     }
                 }
             };
-            backToTopButton.addEventListener("click", () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
+            backToTopButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-            // Create Particles
+            // --- Particle Effect ---
             const createParticles = () => {
                 const container = document.getElementById('particles-container');
                 if (!container) return;
@@ -507,13 +665,11 @@
                 }
             };
             
-            // Event Listeners
+            // --- Initial Calls and Listeners ---
             window.addEventListener('scroll', () => {
                 revealOnScroll();
                 toggleBackToTopBtn();
             });
-
-            // Initial calls
             revealOnScroll();
             createParticles();
         });
