@@ -146,7 +146,7 @@
         "totalVotes": 1250
       },
       "data": {
-        "url": "https://cdn.jsdelivr.net/gh/Jhoorodre/TOG-Brasil@main/Tower_of_God_Parte_1_O_Irregular.json",
+        "url": "https://raw.githubusercontent.com/Jhoorodre/TOG-Brasil/refs/heads/main/Tower_of_God_Parte_1_O_Irregular",
         "format": "json",
         "size": "2.1MB"
       },
