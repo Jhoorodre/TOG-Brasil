@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "version": "1.0",
+    "lastUpdated": "2025-06-24",
+    "language": "pt-BR"
+  },
+  "hub": {
+    "title": "Tower of God Brasil",
+    "subtitle": "Scanlation Oficial Brasileira",
+    "icon": "https://files.catbox.moe/y8t3n2.jpg",
+    "description": "Bem-vindo ao Tower of God Brasil! Somos um grupo de fãs apaixonados, dedicados a trazer a épica jornada de Baam e seus companheiros para o público brasileiro com traduções de alta qualidade, feitas com muito cuidado e respeito pela obra original de S.I.U.\n\nNosso objetivo é compartilhar o amor por este universo incrível e garantir que mais pessoas possam escalar a Torre conosco. Todo o nosso trabalho é voluntário e sem fins lucrativos.",
+    "disclaimer": "Lembre-se sempre de apoiar o autor! Se Tower of God for lançado oficialmente no Brasil, compre e incentive o trabalho de S.I.U.",
+    "team": {
+      "name": "Tower of God Brasil",
+      "type": "Scanlation",
+      "status": "Ativo",
+      "founded": "2024"
+    }
+  },
+  "social": {
+    "discord": {
+      "name": "Discord Oficial",
+      "url": "https://discord.gg/G3bYkAhSDG",
+      "description": "Servidor principal para discussões e atualizações"
+    },
+    "telegram": {
+      "name": "Canal Telegram",
+      "url": "https://t.me/ToGBrasil",
+      "description": "Notificações e releases"
+    },
+    "whatsapp": {
+      "name": "Grupo WhatsApp",
+      "url": "https://chat.whatsapp.com/E2sfzwQBmtk4G7SXE40d02",
+      "description": "Comunidade para discussões rápidas"
+    },
+    "twitter": {
+      "name": "Twitter/X",
+      "url": "https://twitter.com/BrasilTower?s=09",
+      "description": "Atualizações e novidades"
+    }
+  },
+  "series": [
+    {
+      "id": "tog-part1",
+      "title": "Tower of God: Parte 1 – O Irregular",
+      "originalTitle": "Tower of God Season 1",
+      "author": "S.I.U",
+      "status": "Completo",
+      "type": "Manhwa",
+      "genre": ["Ação", "Aventura", "Drama", "Fantasia", "Sobrenatural"],
+      "year": 2010,
+      "cover": "https://cdn.myanimelist.net/images/manga/2/223694.jpg",
+      "description": "A primeira temporada de Tower of God, onde conhecemos Baam e sua jornada para encontrar Rachel na misteriosa Torre.",
+      "chapters": {
+        "total": 78,
+        "translated": 78,
+        "status": "Completo"
+      },
+      "url": "https://raw.githubusercontent.com/Jhoorodre/TOG-Brasil/refs/heads/main/Tower_of_God_Parte_1_O_Irregular.json",
+      "priority": 1
+    },
+    {
+      "id": "tog-part2",
+      "title": "Tower of God: Parte 2 – O Retorno do Príncipe",
+      "originalTitle": "Tower of God Season 2",
+      "author": "S.I.U",
+      "status": "Em Progresso",
+      "type": "Manhwa",
+      "genre": ["Ação", "Aventura", "Drama", "Fantasia", "Sobrenatural"],
+      "year": 2012,
+      "cover": "https://static.wikia.nocookie.net/towerofgod/images/1/1b/ToG-Book09.jpg/revision/latest?cb=20220707194613",
+      "description": "A segunda temporada continua a história de Baam, agora conhecido como Jyu Viole Grace, enquanto ele navega pelos desafios mais perigosos da Torre.",
+      "chapters": {
+        "total": 337,
+        "translated": 337,
+        "status": "Em Progresso"
+      },
+      "url": "https://raw.githubusercontent.com/Jhoorodre/TOG-Brasil/refs/heads/main/Tower_of_God_Parte_2_%E2%80%93_O_Retorno_do_Pr%C3%ADncipe.json",
+      "priority": 2
+    },
+    {
+      "id": "tog-urek",
+      "title": "Tower of God: A Ascensão de Urek Mazzino",
+      "originalTitle": "Tower of God: Urek Mazino",
+      "author": "S.I.U",
+      "status": "Completo",
+      "type": "Manhwa",
+      "genre": ["Ação", "Aventura", "Fantasia"],
+      "year": 2019,
+      "cover": "https://cdn.myanimelist.net/images/manga/2/324137l.jpg",
+      "description": "Uma história especial focada em Urek Mazino, o Irregular mais poderoso da Torre, e sua ascensão lendária.",
+      "chapters": {
+        "total": 1,
+        "translated": 1,
+        "status": "Completo"
+      },
+      "url": "https://raw.githubusercontent.com/Jhoorodre/TOG-Brasil/refs/heads/main/Tower_of_God_-_A_Ascensao_de_Urek_Mazzino.json",
+      "priority": 3,
+      "special": true
+    },
+    {
+      "id": "tog-part3",
+      "title": "Tower of God: Parte 3 – A Batalha das Grandes Famílias",
+      "originalTitle": "Tower of God Season 3",
+      "author": "S.I.U",
+      "status": "Em Progresso",
+      "type": "Manhwa",
+      "genre": ["Ação", "Aventura", "Drama", "Fantasia", "Sobrenatural"],
+      "year": 2023,
+      "cover": "https://files.catbox.moe/hzj0y9.jpg",
+      "description": "A terceira temporada intensifica os conflitos com a guerra entre as Grandes Famílias da Torre, enquanto Baam enfrenta seus maiores desafios até agora.",
+      "chapters": {
+        "total": "Em Andamento",
+        "translated": "Atualizando",
+        "status": "Em Progresso"
+      },
+      "url": "https://raw.githubusercontent.com/Jhoorodre/TOG-Brasil/refs/heads/main/Tower_of_God_Parte_3_%E2%80%93_A_Batalha_entre_os_L%C3%ADderes_das_Fam%C3%ADlias.json",
+      "priority": 4,
+      "latest": true
+    }
+  ],
+  "statistics": {
+    "totalSeries": 4,
+    "completedSeries": 2,
+    "ongoingSeries": 2,
+    "totalChapters": "400+",
+    "teamMembers": "10+"
+  },
+  "updates": {
+    "frequency": "Semanal",
+    "schedule": "Domingos",
+    "timezone": "America/Sao_Paulo"
+  },
+  "legal": {
+    "notice": "Este é um projeto de fãs sem fins lucrativos. Todos os direitos pertencem ao autor original S.I.U e à LINE Webtoon.",
+    "support": "Apoie o autor lendo oficialmente em: https://www.webtoons.com/en/fantasy/tower-of-god/list?title_no=95"
+  }
+}
