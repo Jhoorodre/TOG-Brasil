@@ -1,1 +1,48 @@
-
+{
+  "scan_info": {
+    "name": "TowerOfGodBrasil",
+    "icon_url": "https://files.catbox.moe/yet1j3.webp",
+    "description": "Mangás, manhwas e manhuas da ValkyriesScan",
+    "lastUpdated": 1759171743,
+    "total_works": 4,
+    "version": "1.0.0"
+  },
+  "works": {
+    "tgkr_f11442": {
+      "title": "A Story About Buying a Classmate Once a Week: 5,000 Yen for an Excuse to Spend Time Together",
+      "chapters": [
+        {
+          "id": "f11442",
+          "title": "A Story About Buying a Classmate Once a Week: 5,000 Yen for an Excuse to Spend Time Together",
+          "url": "https://cubari.moe/read/github/gikawork/scan/valkyriescan/vajp_f11442/",
+          "type": "manga",
+          "cover_url": "https://images2.imgbox.com/f9/dc/E3cgdrhM_o.jpg"
+        }
+      ]
+    },
+    "tgkr_ff4697": {
+      "title": "Skylie",
+      "chapters": [
+        {
+          "id": "ff4697",
+          "title": "Skylie",
+          "url": "https://cubari.moe/read/github/gikawork/scan/valkyriescan/vakr_ff4697/",
+          "type": "manhwa",
+          "cover_url": "https://images2.imgbox.com/b7/d4/RFdKQBrg_o.jpg"
+        }
+      ]
+    },
+    "tgkr_345c29": {
+      "title": "Making Progress on Yuri Before the Deadline",
+      "chapters": [
+        {
+          "id": "345c29",
+          "title": "Making Progress on Yuri Before the Deadline",
+          "url": "https://cubari.moe/read/github/gikawork/scan/valkyriescan/vajp_345c29/",
+          "type": "manga",
+          "cover_url": "https://images2.imgbox.com/6d/46/QSIgamBk_o.jpg"
+        }
+      ]
+    }
+  }
+}
