@@ -1,6 +1,6 @@
 {
   "scan_info": {
-    "name": "TowerOfGodBrasil",
+    "name": "TOG Brasil",
     "icon_url": "https://files.catbox.moe/y8t3n2.jpg",
     "description": "TOG-Brasil é um repositório feito de fã para fã, dedicado ao universo de Tower Of God (TOG). Aqui reunimos materiais, referências e conteúdos em português para toda a comunidade brasileira apaixonada pela obra.",
     "lastUpdated": 1759171743,
@@ -9,38 +9,50 @@
   },
   "works": {
     "tgkr_f11442": {
-      "title": "A Story About Buying a Classmate Once a Week: 5,000 Yen for an Excuse to Spend Time Together",
+      "title": "Tower of God: A Ascensão de Urek Mazzino",
       "chapters": [
         {
           "id": "f11442",
-          "title": "A Story About Buying a Classmate Once a Week: 5,000 Yen for an Excuse to Spend Time Together",
-          "url": "https://cubari.moe/read/github/gikawork/scan/valkyriescan/vajp_f11442/",
-          "type": "manga",
-          "cover_url": "https://images2.imgbox.com/f9/dc/E3cgdrhM_o.jpg"
+          "title": "Tower of God: A Ascensão de Urek Mazzino",
+          "url": "https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfQV9Bc2NlbnMlQzMlQTNvX2RlX1VyZWtfTWF6emluby5qc29u/",
+          "type": "manhwa",
+          "cover_url": "https://cdn.myanimelist.net/images/manga/2/324137l.jpg"
         }
       ]
     },
     "tgkr_ff4697": {
-      "title": "Skylie",
+      "title": "Tower of God: Parte 1 – O Irregular",
       "chapters": [
         {
           "id": "ff4697",
-          "title": "Skylie",
-          "url": "https://cubari.moe/read/github/gikawork/scan/valkyriescan/vakr_ff4697/",
+          "title": "Tower of God: Parte 1 – O Irregular",
+          "url": "https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfUGFydGVfMV9PX0lycmVndWxhci5qc29u/",
           "type": "manhwa",
-          "cover_url": "https://images2.imgbox.com/b7/d4/RFdKQBrg_o.jpg"
+          "cover_url": "https://cdn.myanimelist.net/images/manga/2/223694.jp"
+        }
+      ]
+    },
+    "tgkr_ff4697": {
+      "title": "Tower of God: Parte 2 – O Retorno do Príncipe",
+      "chapters": [
+        {
+          "id": "ff4697",
+          "title": "Tower of God: Parte 2 – O Retorno do Príncipe",
+          "url": "https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfUGFydGVfMl8lRTIlODAlOTNfT19SZXRvcm5vX2RvX1ByJUMzJUFEbmNpcGUuanNvbg/",
+          "type": "manhwa",
+          "cover_url": "https://files.catbox.moe/f6icfp.jpg"
         }
       ]
     },
     "tgkr_345c29": {
-      "title": "Making Progress on Yuri Before the Deadline",
+      "title": "Tower of God: Parte 3 – A Batalha das Grandes Famílias",
       "chapters": [
         {
           "id": "345c29",
-          "title": "Making Progress on Yuri Before the Deadline",
-          "url": "https://cubari.moe/read/github/gikawork/scan/valkyriescan/vajp_345c29/",
-          "type": "manga",
-          "cover_url": "https://images2.imgbox.com/6d/46/QSIgamBk_o.jpg"
+          "title": "Tower of God: Parte 3 – A Batalha das Grandes Famílias",
+          "url": "https://cubari.moe/read/gist/cmF3L0pob29yb2RyZS9UT0ctQnJhc2lsL3JlZnMvaGVhZHMvbWFpbi9Ub3dlcl9vZl9Hb2RfUGFydGVfM18lRTIlODAlOTNfQV9CYXRhbGhhX2VudHJlX29zX0wlQzMlQURkZXJlc19kYXNfRmFtJUMzJUFEbGlhcy5qc29u/",
+          "type": "manhwa",
+          "cover_url": "https://files.catbox.moe/hzj0y9.jpg"
         }
       ]
     }
